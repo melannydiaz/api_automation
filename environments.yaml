@@ -1,0 +1,18 @@
+identity_access_service:
+    local:
+      host: https://identity-and-access-service.staging-shared.kueski.codes/
+    staging:
+      host: https://localhost:3000
+    sandbox:
+      host: REPLACE_ME
+    route_sign_up: "v1/transition/auth/sign_up"
+
+identity_service:
+    local:
+      host: https://identity-service.staging-shared.kueski.codes/
+    staging:
+      host: https://localhost:3000
+    sandbox:
+      host: REPLACE_ME
+    route_sign_up: "v1/auth/sign_up"
+    route_log_in: "v1/auth/log_in"
