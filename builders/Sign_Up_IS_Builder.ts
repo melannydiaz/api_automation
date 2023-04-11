@@ -1,4 +1,4 @@
-import { SignInIS } from 'handlers/Sign_UpH';
+import { SignInIS } from '@SignInIShandlers';
 
 export class SignInIdentityService {
 
@@ -8,9 +8,11 @@ export class SignInIdentityService {
         this.userID = newUserID
     }
 
-    public async build() { 
+    public async build(userInfo) { 
         const SignInservice = new SignInIS();
-        const createSignInResponse = await SignInservice.sign_up_IAS();
+        const createSignInResponse = await SignInservice.sign_up_IS(userInfo);
+        console.log(createSignInResponse);
+        console.log(createSignInResponse.rsJSON.data);
         const userID = await createSignInResponse.rsJSON.data.user_id;
         return userID;
     }

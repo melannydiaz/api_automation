@@ -1,17 +1,16 @@
 import { APIRequestContext } from '@playwright/test';
 import { BaseHandler } from '@BaseHandler';
-import { NewUserBuilder } from 'builders/New_User_Builder';
 
 
-export class SignInIS extends BaseHandler {
+
+export class LogInIAS extends BaseHandler {
 
     public apiContext: APIRequestContext;
-    private UserEnvVars = this.envVars.identity_service.sign_in;
+    private UserEnvVars = this.envVars.identity_access_service;
     private Host = this.UserEnvVars[this.stage_selected].host;
     private singUpServiceRoutes = this.UserEnvVars;
 
-    public async sign_up_IAS() {
-        const userInfo = new NewUserBuilder().build();
+    public async log_in_IAS(userInfo) {
         this.apiContext = await this.setUp(this.Host);
         let payload = {
             data: {
@@ -19,7 +18,8 @@ export class SignInIS extends BaseHandler {
                 password: userInfo.password
             }
         };
-        const response = await(this.apiContext).post(this.singUpServiceRoutes.route_sign_in, payload);
+        const response = await(this.apiContext).post(this.singUpServiceRoutes.route_log_in, payload);
+        console.log(userInfo);
         return await this.responseDecorator(response, userInfo);
     }
 }

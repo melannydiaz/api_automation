@@ -6,6 +6,7 @@ identity_access_service:
     sandbox:
       host: REPLACE_ME
     route_sign_up: "v1/transition/auth/sign_up"
+    route_log_in: "v1/transition/auth/log_in"
 
 identity_service:
     local:
@@ -15,4 +16,4 @@ identity_service:
     sandbox:
       host: REPLACE_ME
     route_sign_up: "v1/auth/sign_up"
-    route_log_in: "v1/auth/log_in"
+    

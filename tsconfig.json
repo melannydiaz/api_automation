@@ -2,17 +2,21 @@
     "compilerOptions": {
         "baseUrl": ".",
         "paths": {
-            "@SignInIShandlers": ["handlers/Sign_UpH.ts"],
+            "@SignInIAShandlers": ["handlers/Sign_Up_IAS_Handler.ts"],
+            "@SignInIShandlers": ["handlers/Sign_Up_IS_Handler.ts"],
+            "@LogInIAShandlers": ["handlers/Log_In_IAS_Handler.ts"],
             "@BaseHandler": ["handlers/Base_Handler.ts"],
             "@BaseBuilder": ["builders/Base_Builder.ts"],
             "@UserBuilder": ["builders/New_User_Builder.ts"],
-            "@SingInBuilder": ["builders/Sign_UpB.ts"],
+            "@SingInIASBuilder": ["builders/Sign_Up_IAS_Builder.ts"],
+            "@SignInISBuilder": ["builders/Sign_Up_IS_Builder.ts"],
+            "@LogInIASBuilder": ["builders/Log_In_IAS_Builder.ts"],
             "@utils": ["utils.ts"],
             "@models/*": ["models/*"],
             "@helpers/*": ["helpers/*"],
             "@schemas/*": ["schemas/*"],
             "@constants": ["constants.ts"],
-            "@signInIS": ["builders/Sign_UpB.ts"]
+            
         },
           "resolveJsonModule": true,
           "esModuleInterop": true

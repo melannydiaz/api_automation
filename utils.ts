@@ -1,5 +1,4 @@
 import {v4 as uuidv4} from 'uuid';
-import * as randomEmail from 'random-email';
 
 export function getCustomUUID(length = 19) {
     return (uuidv4().replaceAll('-','')).substr(0,length);
@@ -14,5 +13,5 @@ export function replacePathParam(originalString: string, pathParam: string, valu
 }
 
 export function generateRandEmail() {
-    return String("melanny100@kueski.com");
+    return String("melanny.diaz+"+ generateRandNumber() +"@kueski.com");  ;
 }
