@@ -1,6 +1,5 @@
 import { APIRequestContext } from '@playwright/test';
 import { BaseHandler } from '@BaseHandler';
-import { NewUserBuilder } from 'builders/New_User_Builder';
 
 
 export class SignInIS extends BaseHandler {
@@ -10,7 +9,7 @@ export class SignInIS extends BaseHandler {
     private Host = this.UserEnvVars[this.stage_selected].host;
     private singUpServiceRoutes = this.UserEnvVars;
 
-    public async sign_up_IS(userInfo) {
+    public async signUpIS(userInfo) {
         this.apiContext = await this.setUp(this.Host);
         let payload = {
             data: {
@@ -18,7 +17,7 @@ export class SignInIS extends BaseHandler {
                 password: userInfo.password,
             }
         };
-        const response = await(this.apiContext).post(this.singUpServiceRoutes.route_sign_up, payload);
-        return await this.responseDecorator(response, userInfo);
+        const RESPONSE = await(this.apiContext).post(this.singUpServiceRoutes.route_sign_up, payload);
+        return await this.responseDecorator(RESPONSE, userInfo);
     }
 }

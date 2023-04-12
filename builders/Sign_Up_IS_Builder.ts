@@ -10,11 +10,9 @@ export class SignInIdentityService {
 
     public async build(userInfo) { 
         const SignInservice = new SignInIS();
-        const createSignInResponse = await SignInservice.sign_up_IS(userInfo);
-        console.log(createSignInResponse);
-        console.log(createSignInResponse.rsJSON.data);
-        const userID = await createSignInResponse.rsJSON.data.user_id;
-        return userID;
+        const createSignInResponse = await SignInservice.signUpIS(userInfo);
+        const USERID = await createSignInResponse.rsJSON.data.user_id;
+        return USERID;
     }
     
 }

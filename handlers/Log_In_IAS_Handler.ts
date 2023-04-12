@@ -10,7 +10,7 @@ export class LogInIAS extends BaseHandler {
     private Host = this.UserEnvVars[this.stage_selected].host;
     private singUpServiceRoutes = this.UserEnvVars;
 
-    public async log_in_IAS(userInfo) {
+    public async logInIAS(userInfo) {
         this.apiContext = await this.setUp(this.Host);
         let payload = {
             data: {
@@ -18,8 +18,7 @@ export class LogInIAS extends BaseHandler {
                 password: userInfo.password
             }
         };
-        const response = await(this.apiContext).post(this.singUpServiceRoutes.route_log_in, payload);
-        console.log(userInfo);
-        return await this.responseDecorator(response, userInfo);
+        const RESPONSE = await(this.apiContext).post(this.singUpServiceRoutes.route_log_in, payload);
+        return await this.responseDecorator(RESPONSE);
     }
 }

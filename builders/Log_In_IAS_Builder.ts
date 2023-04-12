@@ -7,8 +7,8 @@ export class LogInIdentityAccessService {
 
     public async build(userInfo) { 
         const LogInservice = new LogInIAS();
-        const createLogInResponse = await LogInservice.log_in_IAS(userInfo);
-        return createLogInResponse.rsJSON;
+        const createLogInResponse = await LogInservice.logInIAS(userInfo);
+        return createLogInResponse;
     }
     
 }

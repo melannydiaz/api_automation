@@ -10,7 +10,7 @@ export class SignInIS extends BaseHandler {
     private Host = this.UserEnvVars[this.stage_selected].host;
     private singUpServiceRoutes = this.UserEnvVars;
 
-    public async sign_up_IAS(userInfo,user_id) {
+    public async signUpIAS(userInfo,user_id) {
         this.apiContext = await this.setUp(this.Host);
         let payload = {
             data: {
@@ -19,7 +19,7 @@ export class SignInIS extends BaseHandler {
                 user_id: user_id
             }
         };
-        const response = await(this.apiContext).post(this.singUpServiceRoutes.route_sign_up, payload);
-        return await this.responseDecorator(response, userInfo);
+        const RESPONSE = await(this.apiContext).post(this.singUpServiceRoutes.route_sign_up, payload);
+        return await this.responseDecorator(RESPONSE, userInfo);
     }
 }

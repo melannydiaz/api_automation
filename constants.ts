@@ -1,7 +1,12 @@
-export const constants = {
+export const CONSTANTS = {
     successResponseJSONFormat: {
-        CODE: 'ok',
+        CODE: 'OK',
         MESSAGE: 'ok',
         STATUS: 'success'
+    },
+
+    failResponseJSONFormat: {
+        CODE: 'invalid_params',
+        STATUS: 'fail'
     }
 }
