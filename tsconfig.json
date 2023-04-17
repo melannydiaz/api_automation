@@ -1,0 +1,21 @@
+{
+    "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+            "@SignInIAShandlers": ["handlers/Sign_Up_IAS_Handler.ts"],
+            "@SignInIShandlers": ["handlers/Sign_Up_IS_Handler.ts"],
+            "@LogInIAShandlers": ["handlers/Log_In_IAS_Handler.ts"],
+            "@BaseHandler": ["handlers/Base_Handler.ts"],
+            "@BaseBuilder": ["builders/Base_Builder.ts"],
+            "@UserBuilder": ["builders/New_User_Builder.ts"],
+            "@SingInIASBuilder": ["builders/Sign_Up_IAS_Builder.ts"],
+            "@SignInISBuilder": ["builders/Sign_Up_IS_Builder.ts"],
+            "@LogInIASBuilder": ["builders/Log_In_IAS_Builder.ts"],
+            "@utils": ["utils.ts"],
+            "@constants": ["constants.ts"],
+            "@BaseTest": ["helpers/Base_Test.ts"],
+        },
+          "resolveJsonModule": true,
+          "esModuleInterop": true
+    }
+}
